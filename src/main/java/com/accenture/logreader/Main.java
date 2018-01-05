@@ -37,8 +37,8 @@ public class Main {
     }
 
     private static boolean contains(String[] arr, String s) {
-        for (int j = 0; j < arr.length; j++) {
-            if (arr[j].equals(s)) {
+        for (String anArr : arr) {
+            if (anArr.equals(s)) {
                 return true;
             }
         }
