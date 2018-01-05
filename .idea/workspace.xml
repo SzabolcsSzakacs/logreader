@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="109f6b55-c8bb-4f54-a9aa-d9d8faaea3bb" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/logreader/Environment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/logreader/ssh/SSHConnector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/logreader/ssh/SSHFileReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/logreader/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -58,6 +57,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/logreader/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="817">
+              <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="SSHFileReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/logreader/ssh/SSHFileReader.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -85,6 +96,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/accenture/logreader/ssh/SSHFileReader.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/accenture/logreader/Environment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/accenture/logreader/Main.java" />
       </list>
     </option>
   </component>
@@ -187,6 +199,9 @@
     </panes>
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.accenture.logreader" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\szabolcs.szakacs\Documents\Homecredit\logreader\src\main\java\com\accenture\logreader\ssh" />
     </key>
@@ -394,6 +409,16 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/logreader/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
