@@ -17,7 +17,7 @@ public class Main {
     }
 
     private static Environment resolveEnvironment(String[] args, Environment _default) {
-        final String[] ENVIRONMENT_ARGS = {"e", "env", "environment"};
+        final String[] ENVIRONMENT_ARGS = {"-e", "-env", "-environment"};
         for (int i = 0; i < args.length; i++) {
             if (contains(ENVIRONMENT_ARGS, args[i])) {
                 return Environment.valueOf(args[i + 1]);
@@ -27,7 +27,7 @@ public class Main {
     }
 
     private static String resolveFilename(String[] args, String _default) {
-        final String[] FILENAME_ARGS = {"f", "file"};
+        final String[] FILENAME_ARGS = {"-f", "-file"};
         for (int i = 0; i < args.length; i++) {
             if (contains(FILENAME_ARGS, args[i])) {
                 return args[i + 1];
