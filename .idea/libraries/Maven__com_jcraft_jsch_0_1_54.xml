@@ -8,6 +8,7 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/com/jcraft/jsch/0.1.54/jsch-0.1.54-sources.jar!/" />
+      <root url="file://$USER_HOME$/Downloads/jsch-0.1.54/jsch-0.1.54/src/main/java" />
     </SOURCES>
   </library>
 </component>
