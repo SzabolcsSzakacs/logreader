@@ -1,8 +1,9 @@
 package com.accenture.logreader.console;
 
 import com.accenture.logreader.Environment;
+import com.accenture.logreader.https.FileReader;
 import com.accenture.logreader.ssh.SSHConnector;
-import com.accenture.logreader.ssh.SSHFileReader;
+import com.accenture.logreader.ssh.SSHFilePrinter;
 import com.jcraft.jsch.Session;
 
 public class ConsoleApplication {
@@ -15,8 +16,14 @@ public class ConsoleApplication {
 
     public void start() {
         Environment env = resolveEnvironment(args, Environment.C7);
-        String file = resolveFilename(args, "/mnt/cndev/mcd01-cn76c1-log/app/cn/mcd-ws/cn76c1/logs/audit.log");
-        getLog(env, file);
+        String file = resolveFilename(args, "/mnt/cndev/mcd01-cn76c1-log/app/cn/mcd-ws/cn76c1/logs/app.log");
+        String correlationId = resolveCorrelationId(args, "2018-01-24 19");
+        getLogSsh(env, file, correlationId);
+        //getLogHttps(env, file);
+    }
+
+    private void getLogHttps(Environment env, String file) {
+        FileReader.read();
     }
 
     private Environment resolveEnvironment(String[] args, Environment _default) {
@@ -44,6 +51,16 @@ public class ConsoleApplication {
         return _default;
     }
 
+    private String resolveCorrelationId(String[] args, String _default) {
+        final String[] FILENAME_ARGS = {"-correlationId", "-cId"};
+        for (int i = 0; i < args.length; i++) {
+            if (contains(FILENAME_ARGS, args[i])) {
+                return args[i + 1];
+            }
+        }
+        return _default;
+    }
+
     private boolean contains(String[] arr, String s) {
         for (String anArr : arr) {
             if (anArr.equals(s)) {
@@ -53,18 +70,15 @@ public class ConsoleApplication {
         return false;
     }
 
-    private void getLog(Environment env, String file) {
+    private void getLogSsh(Environment env, String file, String correlationId) {
         String prvtKey = "c:\\Users\\szabolcs.szakacs\\Documents\\Homecredit\\private_key.ppk";
         SSHConnector connector = new SSHConnector(env.getHost(), env.getUser(), prvtKey);
         Session session = null;
         try {
             session = connector.connect();
-            SSHFileReader fileReader = new SSHFileReader(session);
-            long start = System.currentTimeMillis();
-            String content = fileReader.getString(file);
-            long end = System.currentTimeMillis();
+            SSHFilePrinter fileReader = new SSHFilePrinter(session);
+            String content = fileReader.getString(file, correlationId);
             System.out.println(content);
-            System.out.println("[Downloaded in " + ((end - start) / 1000) + " sec]");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
